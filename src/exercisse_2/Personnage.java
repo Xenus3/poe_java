@@ -7,7 +7,7 @@ public class Personnage {
 	private Arme arme;
 	private Armure armure;
 	
-	Personnage (int hp, String nom, Arme arme, Armure armure) {
+	Personnage (double hp, String nom, Arme arme, Armure armure) {
 		this.hp = hp;
 		this.nom = nom;
 		this.arme = arme;
@@ -63,5 +63,11 @@ public class Personnage {
 		
 		
 	
+	}
+	
+	//redefinition de la methode toString
+	
+	public String toString() {
+		return this.getName()+" : "+this.getHp()+", "+this.arme.getAttaque()+" d'attaque, "+this.armure.getDefense()+" de defense";
 	}
 }
