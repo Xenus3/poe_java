@@ -6,10 +6,10 @@ public class Data {
 	
 	
 	
-	public static final String[] listeAdjectifs = {"De pierre", "Robuste", "En carton", "Rouille", "En fer", "En bois"};
+	public static final String[] listeAdjectifs = {"Magnifique", "Robuste", "Legendaire", "Rouille", "Legere", "Valeureuse"};
 	public static final String[] listeNomsPerso = {"Alfred", "Jose", "Herbert", "Robert", "Dammian", "Anais", "Samuel"};
 	public static final String[] listeNomsArme = {"Epee", "Massue", "Gourdin", "Katana"};
-	public static final String[] listeNomsArmure = {"fer", "tissus", "carton", "maille"};
+	public static final String[] listeNomsArmure = {"Armure de fer", "Armure en tissus", "Armure en cuir", "Armure en maille"};
 	public static final Arme[] randomArmes = {
 			new Arme(Data.genererNomArmes(), 1, 1),
 			new Arme(Data.genererNomArmes(), 1, 2),

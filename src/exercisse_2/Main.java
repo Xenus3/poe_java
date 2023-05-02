@@ -9,6 +9,7 @@ public class Main {
 		Personnage hero = new Personnage(200, Data.genererNom(), Data.randomArmes[2], Data.randomArmures[2]);
 		
 		System.out.println(hero.toString());
+		System.out.println("________________________________");
 		
 		Donjon nebeulheuk = new Donjon();
 		nebeulheuk.genererDonjon();

@@ -80,11 +80,11 @@ public class Combat extends Evenement {
 			
 			
 }
-
+		System.out.println("Inventaire :");
 		for (Objet objet : hero.getInventaire()) {
 			System.out.println(objet.nom);
 		}
-		
+		System.out.println("_______________________");
 	}
 	
 	
