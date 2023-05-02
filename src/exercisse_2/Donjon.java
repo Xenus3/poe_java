@@ -1,41 +1,54 @@
 package exercisse_2;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Donjon {
 	
-	private ArrayList<Personnage> ennemis = new ArrayList<Personnage>();
+	private ArrayList<Evenement> salles = new ArrayList<Evenement>();
 	
-	public ArrayList<Personnage> getEnnemis() {
-		return ennemis;
+	public ArrayList<Evenement> getSalles() {
+		return salles;
 	}
 
-	public void setEnnemis(ArrayList<Personnage> ennemis) {
-		this.ennemis = ennemis;
+	public void setSalles(ArrayList<Evenement> salles) {
+		this.salles = salles;
 	}
 
-	
-	
-	public void explorerDonjon(Personnage hero) {
+	public void genererDonjon() {
 		
-		Scanner input = new Scanner(System.in);
-		System.out.println("Longueur souhaiteé du donjon : ");
+		/*Scanner input = new Scanner(System.in);
+		System.out.print("Longueur du donjon : ");
 		int longueur = input.nextInt();
-		input.close();
+		input.close();*/
 		
-		for(int i = 0; i < longueur; i++) {
-			Arme armeRandom = new Arme("Arme "+(i+1), (int)(Math.random() * 30));
-			Armure armureRandom = new Armure("Armure "+(i+1), (int)(Math.random() * 30));
-			Personnage randomMonster = new Personnage(((Math.random() * 50) + 50), "Random Monster "+(i+1), armeRandom, armureRandom);
-			ennemis.add(randomMonster);
+		for(int i = 0; i < 10; i++) {
+			
+			Random rand = new Random();
+			
+			if(rand.nextInt(10) < 5) {
+				Arme armeRandom = Data.randomArmes[rand.nextInt(Data.randomArmes.length)];
+				Armure armureRandom = Data.randomArmures[rand.nextInt(Data.randomArmures.length)];
+				Personnage randomMonster = new Personnage(((Math.random() * 50) + 50), Data.genererNom(), armeRandom, armureRandom);
+				
+			salles.add( new Combat(null, randomMonster));
+		
+			} else {
+				salles.add(new Piege(null, rand.nextInt(30)));
+			}
 		}
+	}
 		
+	public void explorerDonjon(Personnage hero) {
+	
 		boolean test = true;
 		
-		for(int i = 0; i < ennemis.size() && test; i++) {
-			Combat nouveauCombat = new Combat(hero, ennemis.get(i));
-			nouveauCombat.resoudreCombat();
+		
+		
+		for(int i = 0; i < salles.size() && test; i++) {
+			
+			salles.get(i).resoudre(hero);
 			
 			if(hero.getHp() == 0) {
 				test = false;

@@ -1,22 +1,16 @@
 package exercisse_2;
 
-public class Armure {
+public class Armure extends Objet {
 	
-	private String nom;
+	
 	private int defense;
 	
-	Armure(String nom, int defense) {
-		this.nom = nom;
+	Armure(String nom, int poids, int defense) {
+		super(nom, poids);
 		this.defense = defense;
 	}
 
-	public String getNom() {
-		return nom;
-	}
-
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
+	
 
 	public int getDefense() {
 		return defense;
@@ -25,6 +19,15 @@ public class Armure {
 	public void setDefense(int defense) {
 		this.defense = defense;
 	}
+
+
+
+	@Override
+	public void utiliser(Personnage cible) {
+		// TODO Auto-generated method stub
+		cible.setArmure(this);
+	}
+	
 	
 	
 }

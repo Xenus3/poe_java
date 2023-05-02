@@ -1,22 +1,15 @@
 package exercisse_2;
 
-public class Arme {
+public class Arme extends Objet {
 	
-	private String nom;
 	private int attaque;
 	
-	Arme(String nom, int attaque) {
-		this.nom = nom;
+	Arme(String nom, int poids, int attaque) {
+		super(nom, poids);
 		this.attaque = attaque;
 	}
 
-	public String getNom() {
-		return nom;
-	}
-
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
+	
 
 	public int getAttaque() {
 		return attaque;
@@ -24,6 +17,14 @@ public class Arme {
 
 	public void setAttaque(int attaque) {
 		this.attaque = attaque;
+	}
+
+
+
+	@Override
+	public void utiliser(Personnage cible) {
+		// TODO Auto-generated method stub
+			cible.setArme(this);
 	}
 	
 	
