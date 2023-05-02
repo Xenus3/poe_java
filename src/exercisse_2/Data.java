@@ -58,5 +58,12 @@ public class Data {
 	public static String genererNomArmures() {
 		return genererAssociation(listeNomsArmure, listeAdjectifs);
 	}
-
+	
+	public static Personnage randomMonster() {
+		Random rand = new Random();
+		Arme armeRandom = Data.randomArmes[rand.nextInt(Data.randomArmes.length)];
+		Armure armureRandom = Data.randomArmures[rand.nextInt(Data.randomArmures.length)];
+		Personnage randomMonster = new Personnage(((Math.random() * 50) + 50), Data.genererNom(), armeRandom, armureRandom);
+		return randomMonster;
+	}
 }

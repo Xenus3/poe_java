@@ -16,7 +16,7 @@ public abstract class Evenement {
 		this.hero = hero;
 	}
 	
-	public abstract void resoudre(Personnage hero); 
+	public abstract void resoudre(); 
 
 }
  

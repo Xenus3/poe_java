@@ -11,9 +11,9 @@ public class Main {
 		System.out.println(hero.toString());
 		System.out.println("________________________________");
 		
-		Donjon nebeulheuk = new Donjon();
-		nebeulheuk.genererDonjon();
-		nebeulheuk.explorerDonjon(hero);
+		Donjon nebeulheuk = new Donjon( 10, hero);
+		
+		nebeulheuk.explorerDonjon();
 		
 		
 		}

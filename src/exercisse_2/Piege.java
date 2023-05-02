@@ -21,7 +21,7 @@ public class Piege extends Evenement{
 	}
 
 	@Override
-	public void resoudre(Personnage hero) {
+	public void resoudre() {
 		
 		Random rand = new Random();
 		boolean moreHP = false;

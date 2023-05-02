@@ -45,7 +45,7 @@ public class Combat extends Evenement {
 
 
 	@Override
-	public void resoudre(Personnage hero) {
+	public void resoudre() {
 		while(hero.isAlive() && enemmi.isAlive()) {
 			 
 			
